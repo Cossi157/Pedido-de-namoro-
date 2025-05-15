@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pedido de Namoro</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #f7a1a1, #f79cd4);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.3em;
+  }
+  p {
+    font-size: 1.5em;
+    margin-top: 0;
+  }
+  #btnSim, #btnNao {
+    font-size: 1.5em;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 20px 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  #btnSim {
+    background-color: #28a745;
+    color: white;
+  }
+  #btnNao {
+    background-color: #dc3545;
+    color: white;
+    position: absolute;
+  }
+</style>
+</head>
+<body>
+
+<h1>Letícia, quer namorar comigo?</h1>
+<p>Escolha sua resposta:</p>
+
+<button id="btnSim">Sim</button>
+<button id="btnNao">Não</button>
+
+<audio id="musica" loop autoplay>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_43dbd7c2a4.mp3?filename=romantic-acoustic-guitar-2171.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio.
+</audio>
+
+<script>
+  const btnNao = document.getElementById('btnNao');
+  const btnSim = document.getElementById('btnSim');
+
+  btnNao.style.top = '50%';
+  btnNao.style.left = '60%';
+  btnNao.style.transform = 'translate(-50%, -50%)';
+
+  btnNao.addEventListener('mouseenter', () => {
+    const x = Math.random() * (window.innerWidth - btnNao.offsetWidth);
+    const y = Math.random() * (window.innerHeight - btnNao.offsetHeight);
+    btnNao.style.left = x + 'px';
+    btnNao.style.top = y + 'px';
+  });
+
+  btnSim.addEventListener('click', () => {
+    alert('Oba! Você aceitou! Mal posso esperar para estarmos juntos, Letícia!');
+  });
+</script>
+
+</body>
+</html>
